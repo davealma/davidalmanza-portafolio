@@ -1,12 +1,32 @@
+"use client"
+
 import Link from "next/link";
 import ToggleTheme from './ToggleTheme';
+import LightDarkThemeContext from "./LightDarkThemeContext";
+import { useContext, useState } from "react";
+
 
 const NavBar = () => {
+    const [theme, setTheme] = useState('light');
+    const onThemeChange = () => {
+        setTheme(currTheme => currTheme === 'light' ? 'dark' : 'light')
+    }
+
     return(
-        <div className="w-full h-20 bg-emerald-800 sticky top-0">
+        <LightDarkThemeContext.Provider value={theme}>
+            <NavBarComponent onThemeChange={onThemeChange}/>
+        </LightDarkThemeContext.Provider>
+    );
+};
+
+const NavBarComponent = ({onThemeChange}: {onThemeChange: ()=> void}) => {
+    let theme = useContext(LightDarkThemeContext);
+    const isDark = theme === 'dark';
+    return(
+        <div className={`${isDark ? 'bg-black' : 'bg-gray-400'} w-full h-20 sticky top-0`}>
             <div className="container mx-auto px-4 h-full">
                 <div className="flex justify-between items-center h-full">
-                    <ul className="hidden md:flex gap-x-6 text-white">
+                    <ul className={`hidden md:flex gap-x-6 ${isDark ? 'text-white' : 'text-black'}`}>
                         <li>
                             <Link href="/">Home</Link>
                         </li>
@@ -17,7 +37,7 @@ const NavBar = () => {
                             <Link href="/contact">Contact</Link>
                         </li>
                     </ul>
-                    <ToggleTheme />
+                    <ToggleTheme onThemeChange={onThemeChange}/>
                 </div>
             </div>
         </div>
