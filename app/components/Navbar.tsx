@@ -1,10 +1,9 @@
 "use client"
-
 import Link from "next/link";
 import ToggleTheme from './ToggleTheme';
-import LightDarkThemeContext from "./LightDarkThemeContext";
-import { useContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
+export const LightDarkThemeContext = createContext('light');
 
 const NavBar = () => {
     const [theme, setTheme] = useState('light');
@@ -20,7 +19,7 @@ const NavBar = () => {
 };
 
 const NavBarComponent = ({onThemeChange}: {onThemeChange: ()=> void}) => {
-    let theme = useContext(LightDarkThemeContext);
+    const theme = useContext(LightDarkThemeContext);
     const isDark = theme === 'dark';
     return(
         <div className={`${isDark ? 'bg-black' : 'bg-gray-400'} w-full h-20 sticky top-0`}>
