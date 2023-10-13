@@ -1,31 +1,29 @@
 "use client"
 import Link from "next/link";
 import ToggleTheme from './ToggleTheme';
-import { createContext, useContext, useState } from "react";
+import { useThemeContext } from "@/providers";
+// const NavBar2 = () => {
+//     const [isDark, toggleTheme] = useState(false);
 
-export const LightDarkThemeContext = createContext('light');
+//     return(
+//         <LightDarkThemeContext.Provider value={{isDark}}>
+//             <NavBarComponent onThemeChange={onThemeChange}/>
+//         </LightDarkThemeContext.Provider>
+//     );
+// };
 
 const NavBar = () => {
-    const [theme, setTheme] = useState('light');
-    const onThemeChange = () => {
-        setTheme(currTheme => currTheme === 'light' ? 'dark' : 'light')
+    const { isDark, toggleTheme } = useThemeContext();
+    
+     const onThemeChange = () => {
+         toggleTheme(!isDark);
     }
-
+    
     return(
-        <LightDarkThemeContext.Provider value={theme}>
-            <NavBarComponent onThemeChange={onThemeChange}/>
-        </LightDarkThemeContext.Provider>
-    );
-};
-
-const NavBarComponent = ({onThemeChange}: {onThemeChange: ()=> void}) => {
-    const theme = useContext(LightDarkThemeContext);
-    const isDark = theme === 'dark';
-    return(
-        <div className={`${isDark ? 'bg-black' : 'bg-gray-400'} w-full h-20 sticky top-0`}>
+        <div className={`${isDark ? 'bg-darker' : 'bg-white'} w-full h-20 sticky top-0`}>
             <div className="container mx-auto px-4 h-full">
                 <div className="flex justify-between items-center h-full">
-                    <ul className={`hidden md:flex gap-x-6 ${isDark ? 'text-white' : 'text-black'}`}>
+                    <ul className={`${isDark ? 'text-white' : 'text-black'} hidden md:flex gap-x-6`}>
                         <li>
                             <Link href="/">Home</Link>
                         </li>
