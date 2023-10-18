@@ -1,0 +1,1 @@
+ALTER TABLE `projects` ADD `position` varchar(100) NOT NULL;

@@ -1,0 +1,34 @@
+{
+  "version": "5",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1697341986136,
+      "tag": "0000_overjoyed_lila_cheney",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1697393437858,
+      "tag": "0001_futuristic_microchip",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1697591439304,
+      "tag": "0002_jazzy_sunfire",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1697592162623,
+      "tag": "0003_plain_robin_chapel",
+      "breakpoints": true
+    }
+  ]
+}

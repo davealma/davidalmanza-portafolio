@@ -1,7 +1,6 @@
 "use client";
 import { MoonIcon } from "@heroicons/react/20/solid";
 import { SunIcon } from "@heroicons/react/24/outline";
-import { useContext } from "react";
 import { useThemeContext } from "@/providers";
 
 const ToggleTheme = ({onThemeChange}: {onThemeChange: ()=>void}) => {

@@ -1,5 +1,8 @@
 import React from 'react';
-import HomeWrapper from './homeWrapper';
+import ContentWrapper from './ContentWrapper';
+import Industries from "./components/Industries";
+import {db} from '@/lib/db';
+import {projects} from '@/lib/db/schema';
 
 async function getRepoData(): Promise<RepoData> {
   const myRepoUrl = "https://api.github.com/users/davealma";
@@ -13,9 +16,16 @@ async function getRepoData(): Promise<RepoData> {
 }
 export default async function Home() {
   const repoData = await getRepoData();
-
+  const industries = await db.selectDistinct({industry: projects.industry}).from(projects) as IndustryProps[];
+  
+  console.log(industries);
   return (
-    <HomeWrapper repoData={repoData} />
+    <ContentWrapper>
+      <img src={repoData.avatar_url} alt="Profile Image" className="rounded-full" width={100} height={100}/>
+      <p>{repoData.bio}</p>
+      <span>Industires I have worked on:</span>
+      <Industries industries={industries}/>
+    </ContentWrapper>
   )
 }
 
