@@ -16,6 +16,7 @@ import { mysqlTable, serial, varchar, timestamp, text } from "drizzle-orm/mysql-
 export const contact = mysqlTable('contact', {
     id: serial('id').autoincrement().primaryKey().notNull(),
     email: varchar('email', { length: 256 }).notNull(),
+    fullName: varchar('full-name', { length: 200}).notNull(),
     message: varchar('message', { length: 500 }),
     createdAt: timestamp('createdAt', { mode: 'string'}).defaultNow(),
 });

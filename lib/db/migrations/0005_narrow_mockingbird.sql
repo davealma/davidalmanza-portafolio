@@ -1,0 +1,1 @@
+ALTER TABLE `contact` RENAME COLUMN `fullName` TO `full-name`;

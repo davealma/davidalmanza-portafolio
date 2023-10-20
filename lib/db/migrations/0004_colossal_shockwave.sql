@@ -1,0 +1,1 @@
+ALTER TABLE `contact` ADD `fullName` varchar(200) NOT NULL;

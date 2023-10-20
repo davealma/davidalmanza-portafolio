@@ -1,6 +1,6 @@
 "use client"
 import React from "react";
-import { useThemeContext } from "../providers";
+import { useThemeContext } from "@/providers";
 
 const ContentWrapper = ({children}: {children: React.ReactNode}) => {
     const {isDark} = useThemeContext();
