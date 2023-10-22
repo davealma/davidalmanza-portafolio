@@ -2,15 +2,6 @@
 import Link from "next/link";
 import ToggleTheme from './ToggleTheme';
 import { useThemeContext } from "@/providers";
-// const NavBar2 = () => {
-//     const [isDark, toggleTheme] = useState(false);
-
-//     return(
-//         <LightDarkThemeContext.Provider value={{isDark}}>
-//             <NavBarComponent onThemeChange={onThemeChange}/>
-//         </LightDarkThemeContext.Provider>
-//     );
-// };
 
 const NavBar = () => {
     const { isDark, toggleTheme } = useThemeContext();

@@ -16,6 +16,7 @@ async function getRepoData(): Promise<RepoData> {
 }
 export default async function Home() {
   const repoData = await getRepoData();
+  console.log('re', repoData);
   const industries = await db.selectDistinct({industry: projects.industry}).from(projects) as IndustryProps[];
   
   return (

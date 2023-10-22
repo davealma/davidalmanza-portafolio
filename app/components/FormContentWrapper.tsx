@@ -33,15 +33,15 @@ const FormContentWrapper = () => {
                 <form action={formAction}>
                     <div className="mb-4">
                         <label htmlFor="full-name">Full Name</label>
-                        <Input name="full-name" id="full-name" placeholder="Full Name"/>
+                        <Input name="full-name" id="full-name" placeholder="How should I name you?"/>
                     </div>
                     <div className="mb-4">
                         <label htmlFor="email">Email</label>
-                        <Input name="email" type="email" id="email" placeholder="Email" />
+                        <Input name="email" type="email" id="email" placeholder="I want to contact you later" />
                     </div>
                     <div className="mb-4">
                         <label htmlFor="message">Message</label>
-                        <Textarea id="message" size="lg" name="message" placeholder="Message" minRows="4" />
+                        <Textarea id="message" size="lg" name="message" placeholder="Sometimes Just hi is enough..." minRows="4" />
                     </div>
                     <Button aria-disabled={pending} sx={sxTextColor} disabled={pending} color="neutral" variant="outlined" type="submit">Send</Button>
                 </form>

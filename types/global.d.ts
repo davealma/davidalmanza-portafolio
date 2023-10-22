@@ -7,6 +7,11 @@ declare global {
         toggleTheme: Dispatch<SetStateAction<boolean>>
     };
 
+    interface Socials {
+        provider: string;
+        url: string;
+    }
+
     interface IndustryProps {
         industry: string;
     }
