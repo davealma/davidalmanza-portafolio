@@ -6,7 +6,7 @@ import { Typography, Chip } from '@mui/joy';
 
 const Projects = async ({searchParams}: { searchParams?: { [key: string]: string } }) => {
     let projectsData = [];
-    if (searchParams) {
+    if (searchParams?.industry) {
         projectsData = await db.select().from(projects).where(eq(projects.industry, searchParams.industry));
     }else{
         projectsData = await db.select().from(projects);
