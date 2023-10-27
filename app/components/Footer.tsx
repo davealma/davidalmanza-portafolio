@@ -3,7 +3,6 @@ import FooterImageItem from "./FooterImage";
 
 async function getSocialGitHub(): Promise<Socials[]> {
     const repoUrl = "https://api.github.com/user/social_accounts";
-    console.log(process.env.GITHUB_PAT);
     const response = await fetch(repoUrl, {
         headers: {
             Authorization: `Bearer ${process.env.GITHUB_PAT}`,

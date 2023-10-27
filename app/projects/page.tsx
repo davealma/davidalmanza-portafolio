@@ -1,11 +1,17 @@
 import {db} from '@/lib/db';
 import {projects} from '@/lib/db/schema';
+import {eq} from 'drizzle-orm';
 import ContentWrapper from '../ContentWrapper';
 import { Typography, Chip } from '@mui/joy';
 
-const Projects = async () => {
-    const projectsData = await db.select().from(projects);
-    console.log(projectsData);
+const Projects = async ({searchParams}: { searchParams?: { [key: string]: string } }) => {
+    let projectsData = [];
+    if (searchParams) {
+        projectsData = await db.select().from(projects).where(eq(projects.industry, searchParams.industry));
+    }else{
+        projectsData = await db.select().from(projects);
+    }
+    
     return(
         <>
             <ContentWrapper>

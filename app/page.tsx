@@ -16,7 +16,6 @@ async function getRepoData(): Promise<RepoData> {
 }
 export default async function Home() {
   const repoData = await getRepoData();
-  console.log('re', repoData);
   const industries = await db.selectDistinct({industry: projects.industry}).from(projects) as IndustryProps[];
   
   return (
@@ -44,7 +43,7 @@ export default async function Home() {
       </article>
 
       <div className='my-3'>
-        <span>Industires I have worked on:</span>
+        <span>Industries I have worked on:</span>
         <Industries industries={industries}/>
       </div>
     </ContentWrapper>
