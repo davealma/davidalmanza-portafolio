@@ -29,7 +29,7 @@ const ProjectItem = ({project}:{project: ProjectProps}) => {
         <div className='mb-2'>
             <Typography level='h1' color='primary'>{project.position}</Typography>
             <Typography level="h4" color="primary">{project.projectName} - {project.company}</Typography>
-            <article>{project.description}</article>
+            <article role='project-description'>{project.description}</article>
             <span>Techstack: { getArrayTechnologies().map((tech: string) => <Chip key={tech} color='primary' sx={{margin: '0 4px'}}>{tech}</Chip>) }</span>
         </div>
     );
