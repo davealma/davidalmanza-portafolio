@@ -1,6 +1,13 @@
 
 export {}
 declare global {
+    namespace NodeJS {
+        interface ProcessEnv {
+            DATABASE_URL: string;
+            GITHUB_PAT: string;
+            GOOGLE_TMG: string;
+        }
+    }
 
     interface PorfolioThemeContext {
         isDark: boolean,
