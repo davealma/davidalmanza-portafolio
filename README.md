@@ -1,6 +1,21 @@
 # davidalmanza-portafolio
 Portafolio to display my work experience and proyect development with the different technologies
 
+# Planet Scale Database
+
+Set the correct DATABASE_URL from planet scale configuration connection using Prisma.
+Remember to use `ssl={"rejectUnauthorized":true}` to avoid SSL issue
+
+Generate or update the db schemas within the `lib/db/`` folder with the following command
+```
+npm run migrations:generate
+```
+
+Push the migrations with this command
+```
+npm run db:push
+```
+
 ## Getting Started
 
 First, run the development server:
