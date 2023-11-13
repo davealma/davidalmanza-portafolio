@@ -20,6 +20,7 @@ export default async function Home() {
   
   return (
     <ContentWrapper>
+      { process.env.DEV_FLAG && <h2 className='text-red-600'>Dev Flag enabled.</h2> }
       <div className='my-2'>
         <img src={repoData.avatar_url} alt="Profile Image" className="rounded-full" width={100} height={100}/>
       </div>

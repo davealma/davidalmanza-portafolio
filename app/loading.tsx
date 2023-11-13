@@ -6,7 +6,7 @@ export default function Loading() {
 
     return (
         <ContentWrapper>
-            <Skeleton variant="circular" width={100} height={100} />
+            {/* <Skeleton variant="circular" width={100} height={100} /> */}
             <Skeleton variant="rectangular" sx={skeletonWidth} height={36} />
             <Skeleton variant="rectangular" sx={skeletonWidth} height={20} />
             <Skeleton variant="rectangular" sx={skeletonWidth} height={350} />

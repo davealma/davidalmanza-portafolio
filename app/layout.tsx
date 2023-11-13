@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ThemeProvider from '@/providers';
 const inter = Inter({ subsets: ['latin'] })
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: 'Portafolio',
@@ -29,10 +30,19 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className}>
-      <iframe src={`https://www.googletagmanager.com/ns.html?id=${process.env.GOOGLE_TMG}`} height="0" width="0"></iframe>
+      <iframe src={`https://www.googletagmanager.com/ns.html?id=${process.env.GOOGLE_ANALYTICS}`} height="0" width="0"></iframe>
         <ThemeProvider>
           <Navbar />
-            {children}
+          <Script strategy='lazyOnload' src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS}`}></Script>
+          <Script strategy='lazyOnload'>
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${process.env.GOOGLE_ANALYTICS}');
+            `}
+          </Script>
+          {children}
           <Footer/>
         </ThemeProvider>
       </body>

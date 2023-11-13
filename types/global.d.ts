@@ -8,6 +8,8 @@ declare global {
             DATABASE_URL: string;
             GITHUB_PAT: string;
             GOOGLE_TMG: string;
+            GOOGLE_ANALYTICS: string;
+            DEV_FLAG: boolean;
         }
     }
 

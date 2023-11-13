@@ -5,13 +5,13 @@ const NavLinks = ({isDark}: {isDark: boolean}) => {
         <nav>
             <ul className={`${isDark ? 'text-white' : 'text-black'} hidden md:flex gap-x-6`}>
                 <li>
-                    <Link href="/">Home</Link>
+                    <Link className="leading-[80px] py-[30px]" href="/">Home</Link>
                 </li>
                 <li>
-                    <Link href="/projects">Projects</Link>
+                    <Link className="leading-[80px] py-[30px]" href="/projects">Projects</Link>
                 </li>
                 <li>
-                    <Link href="/contact">Contact</Link>
+                    <Link className="leading-[80px] py-[30px]" href="/contact">Contact</Link>
                 </li>
             </ul>
         </nav>
