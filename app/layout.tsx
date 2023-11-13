@@ -33,8 +33,7 @@ export default function RootLayout({
       <iframe src={`https://www.googletagmanager.com/ns.html?id=${process.env.GOOGLE_ANALYTICS}`} height="0" width="0"></iframe>
         <ThemeProvider>
           <Navbar />
-          <Script strategy='lazyOnload' src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS}`}></Script>
-          <Script strategy='lazyOnload'>
+          <Script id='google-analytic' strategy='lazyOnload'>
             {`
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
