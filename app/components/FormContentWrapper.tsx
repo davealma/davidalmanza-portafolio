@@ -18,7 +18,7 @@ const FormContentWrapper = () => {
     const [state, formAction] = useFormState(createContact, initialState);
 
     const sxTextColor = {
-        color: isDark ? 'white' : '#222222'
+        color: isDark ? 'white' : '#222222',
     }
 
     const sxMargin = {
@@ -42,11 +42,11 @@ const FormContentWrapper = () => {
     )
 };
 
-const SubmitButton = ({sxTextColor}: any) => {
+const SubmitButton = () => {
     const { pending } = useFormStatus();
     
     return(
-        <Button aria-disabled={pending} loading={pending} sx={sxTextColor} disabled={pending} color="neutral" variant="outlined" type="submit"> { pending ? 'loading' : 'Send' } </Button>
+        <Button aria-disabled={pending} loading={pending} sx={{color: 'inherit'}} disabled={pending} variant="outlined" type="submit"> { pending ? 'loading' : 'Send' } </Button>
     )
 }
 

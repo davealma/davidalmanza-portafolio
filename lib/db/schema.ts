@@ -1,4 +1,4 @@
-import { mysqlTable, serial, varchar, timestamp, text } from "drizzle-orm/mysql-core";
+import { mysqlTable, serial, varchar, timestamp, text, date } from "drizzle-orm/mysql-core";
 
  export const projects = mysqlTable('projects', {
     id: serial('id').autoincrement().primaryKey().notNull(),
@@ -8,8 +8,8 @@ import { mysqlTable, serial, varchar, timestamp, text } from "drizzle-orm/mysql-
     technologies: varchar('technologies', { length: 250 }).notNull(),
     projectImage: varchar('project_image', { length: 200 }).notNull(),
     industry: varchar('industry', { length: 50 }).notNull(),
-    startDate: timestamp('start_date', {mode: 'string'}),
-    endDate: timestamp('end_date', {mode: 'string'}),
+    startDate: date('start_date'), 
+    endDate: date('end_date'),
     position: varchar('position', { length: 100 }).notNull()
 });
 

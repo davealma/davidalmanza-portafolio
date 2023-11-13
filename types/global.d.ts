@@ -33,6 +33,8 @@ declare global {
         company: string | null;
         position: string;
         id: number;
+        startDate: date;
+        endDate: Date | null;
     }
 
     type RepoData = {
