@@ -8,8 +8,10 @@ const inter = Inter({ subsets: ['latin'] })
 import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: 'Portafolio',
-  description: 'David Almanza Portafolio',
+  title: 'Portafolio David Almanza',
+  description: 'David Almanza Portafolio FullStack developer',
+  keywords: 'fullstack, react, javascript, nextjs, nodejs',
+  robots: 'all'
 }
 
 export default function RootLayout({
