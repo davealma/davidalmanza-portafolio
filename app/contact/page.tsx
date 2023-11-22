@@ -1,4 +1,4 @@
-import FormContentWrapper from "../components/FormContentWrapper";
+import FormContentWrapper from "./FormContentWrapper";
 
 const Contact = () => {
     return(

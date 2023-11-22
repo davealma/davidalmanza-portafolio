@@ -10,6 +10,7 @@ declare global {
             GOOGLE_TMG: string;
             GOOGLE_ANALYTICS: string;
             DEV_FLAG: boolean;
+            EMAIL_LABMDA_URL: string;
         }
     }
 

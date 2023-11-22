@@ -8,7 +8,7 @@ import { experimental_useFormState as useFormState } from "react-dom";
 import { experimental_useFormStatus as useFormStatus } from "react-dom";
 import {ThumbUpAltOutlined, ThumbDownAltOutlined} from '@mui/icons-material';
 import { createContact } from "@/app/actions/createContact";
-import ContactForm from "../contact/ContactForm";
+import ContactForm from "./ContactForm";
 
 const initialState = {
     message: null,
